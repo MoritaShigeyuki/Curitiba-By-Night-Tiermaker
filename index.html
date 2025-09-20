@@ -1,0 +1,238 @@
+<html lang pt-BR>
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CbNTiermaker">
+    <meta name="author" content="Matheus Shigueyuki">
+    <meta name="viewpoert" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/cross.png">
+
+    <style>
+        .top-bar {
+            background-color: rgb(10, 10, 10);
+            color: rgb(175, 0, 0);
+            border-radius: 10px;
+            border-bottom: solid 3px rgb(175, 0, 0);
+            border-top: solid 3px rgb(175, 0, 0);
+            border-left: solid 3px rgb(175, 0, 0);
+            border-right: solid 3px rgb(175, 0, 0);
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar img {
+            height: 50px;
+        }
+
+        h1 {
+            color: rgb(175, 0, 0);
+            width: 100px;
+            height: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            border-right: solid rgb(175, 0, 0);
+        }
+
+        h2 {
+            color: rgb(175, 0, 0);
+        }
+
+        hr {
+            color: rgb(175, 0, 0);
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+
+        body {
+            background-color: rgb(10, 10, 10);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 1920px;
+            margin: 0 auto;
+        }
+
+        .tier-list {
+            display: grid;
+            grid-template-columns: 100px 1fr; /* Fixed width for tier labels, flexible for content */
+            margin-left: 175px;
+            margin-right: 175px;
+            gap: 2px;
+            max-width: 1503px;
+            border: solid 1px rgb(175, 0, 0);
+        }
+
+        .tier-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            min-height: 100px;
+            max-width: 100px;
+        }
+
+        .tier-content {
+            display: flex;
+            align-items: center;
+            min-height: 100px;
+            flex-wrap: wrap;
+        }
+
+        .tier-s { background: linear-gradient(135deg, #ff6b6b, #ff5252); }
+        .tier-a { background: linear-gradient(135deg, #ffa726, #ff9800); }
+        .tier-b { background: linear-gradient(135deg, #ffeb3b, #fdd835); }
+        .tier-c { background: linear-gradient(135deg, #c6ff00, #aeea00); }
+        .tier-d { background: linear-gradient(135deg, #4caf50, #388e3c); }
+        .tier-e { background: linear-gradient(135deg, #00e676, #00c853); }
+        .tier-f { background: linear-gradient(135deg, #00bcd4, #0097a7); }
+
+        .pool {
+            display: grid;
+            grid-template-columns: repeat(15, 100px);
+            min-height: 200px;
+            max-width: 1500px;
+            margin-top: 50px;
+            margin-left: 175px;
+            margin-right: 175px;
+            margin-bottom: 50px;
+            justify-content: center;
+        }
+
+        .character {
+            display: block;
+            height: 100px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <title>Curitiba by Night</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="/img/anarch.png">
+            <h2>Curitiba by Night</h2>
+            <img src="/img/cross.png">
+        </div>
+
+        <hr />
+    </header>
+
+    <main>        
+        <div class="container">
+            <div class="tier-list">
+                <div class="tier-label tier-s">S</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-a">A</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-b">B</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-c">C</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-d">D</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-e">E</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+            <div class="tier-list">
+                <div class="tier-label tier-f">F</div>
+                <div class="tier-content" draggable="true" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                </div>
+            </div>
+        
+            <div class="pool" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+                <img src="/img/abraao.png" id="abraao" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/alex.png" id="alex" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/alexandre.png" id="alexandre" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/amano.png" id="amano" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/basilisk.png" id="basilisk" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/bie.png" id="bie" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/charlie.png" id="charlie" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/coruja.png" id="coruja.png" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/corvo.png" id="corvo.png" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/dragao.png" id="dragao" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/dullahan.png" id="dullahan" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/echo.png" id="echo" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/enma.png" id="enma" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/foxtrot.png" id="foxtrot" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/galahad.png" id="galahad" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/gebura.png" id="gebura" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/hel.png" id="hel" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/hydra.png" id="hydra" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/ilya.png" id="ilya" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/isaac.png" id="isaac" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/ishtar.png" id="ishtar" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/julia.png" id="julia" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/kilo.png" id="kilo" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/kiriya.png" id="kiriya" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/laura.png" id="laura" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/mayer.png" id="mayer" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/natalie.png" id="natalie" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/natsuki.png" id="natsuki" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/nero.png" id="nero" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/nicole.png" id="nicole" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/rafael.png" id="rafael" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/rahab.png" id="rahab" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/ren.png" id="ren" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/riel.png" id="riel" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/roland.png" id="roland" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/samuel.png" id="samuel" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/sofia.png" id="sofia" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/sons.png" id="sons" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/ulf.png" id="ulf" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/williamb.png" id="williamb" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/yui.png" id="yui" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+                <img src="/img/yulia.png" id="yulia" class="character" draggable="true" ondragstart="dragstartHandler(event)">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dragoverHandler(ev) {
+            ev.preventDefault();
+        }
+
+        function dropHandler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.currentTarget.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>
